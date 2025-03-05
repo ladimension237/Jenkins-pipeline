@@ -4,7 +4,8 @@ pipeline {
     stage('clone'){
         steps{
             sh 'echo "clone"'
-            sh 'unam -r'
+            sh 'uname -r'
+            sh 'nproc'
         }
     }
     stage('test'){

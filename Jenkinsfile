@@ -37,10 +37,8 @@ pipeline {
     
     stage('pushImage'){
         steps{
-            sh "docker push \
-            docker push $IMAGE_ECR_REPO:latest"
-            sh "docker push \
-            docker push $IMAGE_ECR_REPO:v1.$BUILD_NUMBER"
+            sh "docker push $IMAGE_ECR_REPO:latest"
+            sh "docker push $IMAGE_ECR_REPO:v1.$BUILD_NUMBER"
         }
     }
    } 

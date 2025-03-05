@@ -20,7 +20,7 @@ pipeline {
             sh 'docker build -t jenkins-ci .'
             sh 'docker buiild -it imageversion .'
         }
-}
+    }
     stage('dockerImageTag'){
         steps{
             sh 'docker tag jenkins-ci:latest\
@@ -30,7 +30,7 @@ pipeline {
             
             
         }    
-        }
+    }
     
     stage('pushImage'){
         steps{
@@ -39,5 +39,6 @@ pipeline {
             
         }
     }
-   } 
    }
+}
+   

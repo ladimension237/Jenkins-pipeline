@@ -4,7 +4,7 @@ pipeline {
    environment{
     AWS_REGION = 'us-east-1'
     ECR_REPO = '533267306722.dkr.ecr.us-east-1.amazonaws.com'
-    IMAGE_ECR_REPO = '533267306722.dkr.ecr.us-east-1.amazonaws.com/jenkis-ci'
+    IMAGE_ECR_REPO = '533267306722.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci'
 
    }
    stages{

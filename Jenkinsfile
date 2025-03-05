@@ -18,13 +18,16 @@ pipeline {
     stage('dockerImageBuild'){
         steps{
             sh 'docker build -t jenkins-ci .'
-            sh 'docker build -t imageversion . '
+            sh 'docker buiild -it imageversion .'
         }
 }
     stage('dockerImageTag'){
         steps{
             sh 'docker tag jenkins-ci:latest\
              533267306722.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:latest'
+            sh 'docker tag imageversion\
+             533267306722.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.$BUILD_NUMBER' 
+            
             
         }    
         }
@@ -32,6 +35,7 @@ pipeline {
     stage('pushImage'){
         steps{
             sh 'docker push 533267306722.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:latest'
+            sh 'docker push 533267306722.dkr.ecr.us-east-1.amazonaws.com/jenkins-ci:v1.$BUILD_NUMBER'
             
         }
     }
